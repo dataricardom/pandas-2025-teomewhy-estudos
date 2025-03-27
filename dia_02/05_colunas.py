@@ -107,3 +107,11 @@ colunas = list(df.columns)
 colunas.sort()
 
 colunas
+
+# %%
+
+#Adicionando modificações de ordem no df.
+
+df = df[colunas]
+
+df
