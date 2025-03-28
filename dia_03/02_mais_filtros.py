@@ -50,15 +50,3 @@ filtro_not_null = ~ clientes["dtCriacao"].isna()
 
 filtro_not_null = clientes["dtCriacao"].notna()
 clientes[filtro_not_null]
-
-
-# %%
-
-clientes = pd.read_csv("..//data/clientes.csv")
-clientes.head()
-
-# %%
-
-filtro_data = ~ clientes["dtCriacao"] == 'NULL' 
-
-clientes[filtro]
