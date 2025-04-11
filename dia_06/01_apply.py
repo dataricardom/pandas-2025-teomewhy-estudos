@@ -33,3 +33,6 @@ clientes
 #Utilizando apply em vez de for para executar função na serie do dataframe.
 
 clientes["idCliente"].apply(pegar_ult_id)
+
+
+
