@@ -125,10 +125,14 @@ uf
 # %%
 
 def classifica_bom(linha):
-    return (linha["PIB per capita (R$) (2015)"] > 30000 and
+    if (linha["PIB per capita (R$) (2015)"] > 30000 and
             linha["Mortalidade infantil (2016)"] < 0.015 and
-            linha["IDH (2010)"] > 700)
+            linha["IDH (2010)"] > 700):
+        return ("Parece bom")
+    else:
+        return "Parece ruim"
 
 # %%
 
-uf.apply(classifica_bom, axis = 1)[4]
+uf["Status"] = uf.apply(classifica_bom, axis = 1)
+uf
