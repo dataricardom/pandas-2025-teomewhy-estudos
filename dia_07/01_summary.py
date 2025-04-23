@@ -78,3 +78,16 @@ clientes.dtypes[~filtro].index.to_list()
 # Mesma ação de forma simplificada:
 
 num_columns = clientes.dtypes[~(clientes.dtypes == "object")].index.to_list()
+
+# %%
+
+# Refazendo agragação com filtro das colunas que são do tipo numerico.
+
+clientes[num_columns].mean()
+
+# %%
+
+clientes[num_columns].describe()
+
+# %%
+
