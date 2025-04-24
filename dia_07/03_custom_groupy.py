@@ -34,3 +34,25 @@ summary_2.columns
 
 summary_2.columns = ['idCliente', 'qtdeTransacao', 'totalPontos', 'avgPontos','diff_amp']
 summary_2
+
+
+# %%
+# Essa função life_time calcula o tempo de vida (em dias) de um conjunto de datas, ou seja
+# a diferença entre a data mais recente e a mais antiga dentro de uma Series do pandas.
+def life_time(tempo: pd.Series):
+    dt = pd.to_datetime(tempo)
+    return (dt.max() - dt.min()).days
+# Após isso pode ser usada no agg.
+
+# %%
+
+summary_3 = (transacoes.groupby(by=["idCliente"], as_index=False)
+ .agg({"idTransacao": ["count"],
+                 "qtdePontos": ["sum", "mean", diff_amp]
+                 ,"dtCriacao": [life_time]}))
+
+summary_3.columns = ["idCliente", "qtdeTransacao","totalPontos","avgPontos","diff_amp","life_time"]
+
+# %%
+
+summary_3

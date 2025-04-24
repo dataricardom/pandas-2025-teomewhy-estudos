@@ -66,3 +66,5 @@ summary[("qtdePontos", "mean")]
 summary.columns = ['idCliente', 'qtdeTransacao', 'totalPontos', 'avgPontos']
 
 summary
+
+# %%
